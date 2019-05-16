@@ -9,6 +9,12 @@
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
   <body ng-controller="MyController as ctrl">
-    <h1>{{ ctrl.testing }}</h1>
+    <form ng-submit="ctrl.createItem()">
+            <input type="text" ng-model="ctrl.name" placeholder="name">
+            <input type="text" ng-model="ctrl.email" placeholder="email">
+            <input type="text" ng-model="ctrl.phone" placeholder="phone">
+            <input type="text" ng-model="ctrl.zip" placeholder="zip">
+            <input type="submit" value="Add Item"/>
+          </form>
   </body>
 </html>
