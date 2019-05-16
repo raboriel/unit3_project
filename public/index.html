@@ -10,11 +10,16 @@
   </head>
   <body ng-controller="MyController as ctrl">
     <form ng-submit="ctrl.createItem()">
-            <input type="text" ng-model="ctrl.name" placeholder="name">
-            <input type="text" ng-model="ctrl.email" placeholder="email">
-            <input type="text" ng-model="ctrl.phone" placeholder="phone">
-            <input type="text" ng-model="ctrl.zip" placeholder="zip">
-            <input type="submit" value="Add Item"/>
-          </form>
+      <input type="text" ng-model="ctrl.name" placeholder="name">
+      <input type="text" ng-model="ctrl.email" placeholder="email">
+      <input type="text" ng-model="ctrl.phone" placeholder="phone">
+      <input type="text" ng-model="ctrl.zip" placeholder="zip">
+      <input type="submit" value="Add Item"/>
+    </form>
+    <ul>
+      <li ng-repeat="item in ctrl.items"> {{ item.name }}
+        <button ng-click="ctrl.deleteItem(item)">X</button>
+      </li>
+    </ul>
   </body>
 </html>
