@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="MarketPlace">
   <head>
     <meta charset="utf-8">
     <title></title>
+    <!-- connect angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <!-- connect app.js -->
+    <script src="/js/app.js" charset="utf-8"></script>
   </head>
-  <body>
-    <h1>Hi</h1>
+  <body ng-controller="MyController as ctrl">
+    <h1>{{ ctrl.testing }}</h1>
   </body>
 </html>
