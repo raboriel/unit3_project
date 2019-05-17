@@ -11,6 +11,7 @@ const bcrypt = require('bcryptjs');
 //========
 // INDEX
 //========
+//so this GET route needs to be available to be seen by anyone
 router.get('/', (req, res) => {
   Items.find({}, (error, foundUser) => {
     res.json(foundUser);

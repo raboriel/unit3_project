@@ -8,7 +8,9 @@ const itemSchema = new mongoose.Schema({
   name: String,
   email: String,
   phone: Number,
-  zip: Number
+  zip: Number,
+  price: Number,
+  idForUser: String
 });
 
 const Item = mongoose.model('Items', itemSchema);

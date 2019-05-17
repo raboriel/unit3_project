@@ -22,7 +22,8 @@
     </form>
     <h2>Add Item</h2>
     <form ng-submit="ctrl.createItem()">
-      <input type="text" ng-model="ctrl.name" placeholder="name">
+      <input type="text" ng-model="ctrl.name" placeholder="Item Name">
+      <input type="text" ng-model="ctrl.price" placeholder="Item Price">
       <input type="text" ng-model="ctrl.email" placeholder="email">
       <input type="text" ng-model="ctrl.phone" placeholder="phone">
       <input type="text" ng-model="ctrl.zip" placeholder="zip">
@@ -32,6 +33,19 @@
     <ul>
     <li ng-repeat="item in ctrl.items"> {{ item.name }}
       <button ng-click="ctrl.deleteItem(item)">X</button>
+      <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editItem(item);">
+        <input type="text" ng-model="ctrl.updatedName" placeholder="Item Name" />
+        <input type="text" ng-model="ctrl.updatedPrice" placeholder="Item Price" />
+        <input type="text" ng-model="ctrl.updatedEmail" placeholder="Email" />
+        <input type="text" ng-model="ctrl.updatedPhone" placeholder="Phone" />
+        <input type="text" ng-model="ctrl.updatedZip" placeholder="Zip" />
+        <input type="submit" value="Update">
+        </form>
+      <button type="button"
+              ng-if="$index !== ctrl.indexOfEditFormToShow"
+              ng-click="ctrl.indexOfEditFormToShow = $index"
+              name="button"
+              >EDIT</button>
     </li>
     </ul>
   </body>

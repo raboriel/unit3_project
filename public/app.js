@@ -59,7 +59,8 @@ app.controller('appController', ['$http', function($http){
           name: this.name,
           email: this.email,
           phone: this.phone,
-          email: this.email
+          price: this.price,
+          zip: this.zip
         }
     }).then(function(response){
         controller.getItem() //refresh the list
@@ -86,7 +87,7 @@ app.controller('appController', ['$http', function($http){
   this.deleteItem = function(item){
   $http({
     method:'DELETE',
-    url: '/marketplace/' + item._id
+    url: '/items/' + item._id
   }).then(
     function(response){
       controller.getItem(); //refresh item list
@@ -95,6 +96,30 @@ app.controller('appController', ['$http', function($http){
     }
     );
   }
+
+  //function to update an item
+  this.editItem = function(item){
+    $http({
+      method:'PUT',
+      url: '/items/' + item._id,
+        data: {
+          name: this.updatedName,
+          email: this.updatedEmail,
+          phone: this.updatedPhone,
+          price: this.updatedPrice,
+          email: this.updatedEmail
+          }
+      }).then(
+          function(response){
+            controller.getItem();
+            controller.indexOfEditFormToShow = null;
+          },
+          function(error){
+
+          }
+      );
+  }
+
 
   this.getItem();
 
