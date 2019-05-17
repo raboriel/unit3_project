@@ -52,6 +52,10 @@ app.use('/users', userController);
 // sessioncontroller for log in
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
+// items controller for CRUD on items
+// TODO rename file
+const itemsController = require('./controllers/controller.js');
+app.use('/items', itemsController);
 
 
 //=============

@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
 const Items = require('../models/items.js');
 const User = require('../models/users.js');
+const bcrypt = require('bcryptjs');
 
 
 //========
@@ -14,14 +15,14 @@ router.get('/', (req, res) => {
   Items.find({}, (error, foundUser) => {
     res.json(foundUser);
   });
-});
+})
 
 //=======
 // POST
 //=======
 router.post('/', (req, res) => {
-  Items.create(req.body, (err, createdUser) => {
-    res.json(createdUser)
+  Items.create(req.body, (err, createdItem) => {
+    res.json(createdItem)
   });
 });
 
@@ -29,8 +30,8 @@ router.post('/', (req, res) => {
 // DELETE
 //=========
 router.delete('/:id', (req, res)=>{
-    Items.findByIdAndRemove(req.params.id, (err, deletedUser) => {
-        res.json(deletedUser);
+    Items.findByIdAndRemove(req.params.id, (err, deletedItem) => {
+        res.json(deletedItem);
     });
 });
 
@@ -38,8 +39,8 @@ router.delete('/:id', (req, res)=>{
 // UPDATE
 //=========
 router.put('/:id', (req, res)=>{
-    Items.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedUser)=>{
-        res.json(updatedUser);
+    Items.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedItem)=>{
+        res.json(updatedItem);
     });
 });
 
