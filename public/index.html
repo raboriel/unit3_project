@@ -3,20 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <script src="/app.js" charset="utf-8"></script>
   </head>
   <body ng-controller="appController as ctrl">
     <h1>Hi</h1>
-    <h2>Create User</h2>
-    <form ng-submit="ctrl.createUser()">
-      <input type="text" ng-model="ctrl.username"/>
-      <input type="password" ng-model="ctrl.password"/>
-      <input type="submit" value="Create user"/>
-    </form>
-    <h2>Log In</h2>
-    <form ng-submit="ctrl.logIn()">
-      <input type="text" ng-model="ctrl.logUsername"/>
-      <input type="password" ng-model="ctrl.logPassword"/>
-      <input type="submit" value="Log In"/>
-    </form>
+    <!-- user path /partials/users.html -->
+    <div ng-include="'partials/users.html'"></div>
+    <!-- search path /partials/search.html -->
+    <div ng-include="'partials/search.html'"></div>
+    <!-- item path /partials/items.html -->
+    <div ng-include="'partials/items.html'"></div>
   </body>
 </html>
