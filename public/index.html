@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="MyApp">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body ng-controller="appController as ctrl">
     <h1>Hi</h1>
+    <h2>Create User</h2>
+    <form ng-submit="ctrl.createUser()">
+      <input type="text" ng-model="ctrl.username"/>
+      <input type="password" ng-model="ctrl.password"/>
+      <input type="submit" value="Create user"/>
+    </form>
+    <h2>Log In</h2>
+    <form ng-submit="ctrl.logIn()">
+      <input type="text" ng-model="ctrl.logUsername"/>
+      <input type="password" ng-model="ctrl.logPassword"/>
+      <input type="submit" value="Log In"/>
+    </form>
   </body>
 </html>

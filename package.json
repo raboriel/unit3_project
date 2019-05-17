@@ -11,7 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "express": "^4.16.4",
+    "express-session": "^1.16.1",
     "mongoose": "^5.5.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyndsssa/unit3_project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lyndsssa/unit3_project/issues"
+  },
+  "homepage": "https://github.com/lyndsssa/unit3_project#readme"
 }
