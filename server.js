@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const db = mongoose.connection;
+const session = require('express-session');
 const marketplaceController = require('./controllers/controller.js');
 
 //port
@@ -25,6 +26,32 @@ db.on('open', () => {
 app.use(express.static('public'));
 app.use(express.json());
 app.use('/marketplace', marketplaceController);
+app.use(express.urlencoded({extended:false}))
+app.use(session({
+    secret:'feedmeseymour',
+    resave: false,
+    saveUninitialized: false
+}));
+
+//===================
+// Get User Session
+//===================
+app.get('/app', (req, res)=>{
+    if(req.session.currentUser){
+        res.json(req.session.currentUser);
+    } else {
+        res.status(401).json({
+          status:401,
+          message:'not logged in'
+        });
+    }
+})
+// usercontroller for sign up
+const userController = require('./controllers/users.js')
+app.use('/users', userController);
+// sessioncontroller for log in
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 
 
 //=============
