@@ -134,7 +134,30 @@ app.controller('appController', ['$http', function($http){
           }
       );
   }
-
+  this.indexOfEmailFormToShow = null;
+  //email function
+  this.sendEmail =  function(sendName, sendMail, sendMessage){
+  fetch('/send', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: this.sendName,
+      email: this.sendMail,
+      message: this.sendMessage
+    })
+  })
+  .then((res) => res.json())
+  .then((res) => {
+    this.indexOfEmailFormToShow = null;
+    console.log('here is the response: ', res);
+  })
+  .catch((err) => {
+    console.error('here is the error: ', err);
+  })
+ }
 
   this.getItem();
 

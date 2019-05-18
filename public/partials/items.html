@@ -24,5 +24,17 @@
           ng-click="ctrl.indexOfEditFormToShow = $index"
           name="button"
           >EDIT</button>
+
+  <form ng-submit="ctrl.sendEmail()" ng-if="$index === ctrl.indexOfEmailFormToShow">
+    <input type="text" ng-model="ctrl.sendName" placeholder="Your Name" />
+    <input type="text" ng-model="ctrl.sendMessage" placeholder=" Your Message" />
+    <input type="text" ng-model="ctrl.sendMail" placeholder="Your Email" />
+    <input type="submit" value="Send">
+  </form>
+  <button type="button"
+          ng-if="$index !== ctrl.indexOfEmailFormToShow"
+          ng-click="ctrl.indexOfEmailFormToShow = $index"
+          name="button"
+          >Message</button>
 </li>
 </ul>
