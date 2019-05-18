@@ -47,6 +47,43 @@ app.get('/app', (req, res)=>{
         });
     }
 })
+
+//============
+// SEND EMAIL
+//============
+app.post('/send', function(req, res, next) {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'SEIRproject3@gmail.com',
+      pass: '!Muffins!'
+    }
+  })
+  const mailOptions = {
+    from: `${req.body.email}`,
+    to: 'SEIRproject3@gmail.com',
+    subject: `Testing`,
+    text: `${req.body.message}`,
+    replyTo: `${req.body.email}`
+  }
+  transporter.sendMail(mailOptions, function(err, res) {
+    if (err) {
+      console.error('Error: ', err);
+    } else {
+      console.log('Response: ', res)
+    }
+  })
+
+})
+
+
+
+
+
+
+
+
+
 // usercontroller for sign up
 const userController = require('./controllers/users.js')
 app.use('/users', userController);

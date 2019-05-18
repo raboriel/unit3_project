@@ -134,7 +134,7 @@ app.controller('appController', ['$http', function($http){
   }
 
   //email function
-  this.sendEmail =  function(name, email, message){
+  this.sendEmail =  function(sendName, sendMail, sendMessage){
   fetch('/send', {
     method: 'POST',
     headers: {
