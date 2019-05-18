@@ -6,6 +6,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script src="/app.js" charset="utf-8"></script>
   </head>
+  <label for="Search for">
+	  <input type='text' placeholder='Search for item' ng-model='searchBox'>
+    <input type="submit" value="Go"/>
+</label>
+<ul>
+	<li ng-repeat="product in ctrl.products| filter: searchBox">{{ product.name}} :<span> {{product.price | currency}}</span></li>
+</ul>
   <body ng-controller="appController as ctrl">
     <h1>Hi</h1>
     <!-- user path /partials/users.html -->
