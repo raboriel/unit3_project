@@ -132,7 +132,7 @@ app.controller('appController', ['$http', function($http){
           }
       );
   }
-
+  this.indexOfEmailFormToShow = null;
   //email function
   this.sendEmail =  function(sendName, sendMail, sendMessage){
   fetch('/send', {
@@ -149,6 +149,7 @@ app.controller('appController', ['$http', function($http){
   })
   .then((res) => res.json())
   .then((res) => {
+    this.indexOfEmailFormToShow = null;
     console.log('here is the response: ', res);
   })
   .catch((err) => {
