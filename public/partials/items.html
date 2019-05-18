@@ -24,5 +24,12 @@
           ng-click="ctrl.indexOfEditFormToShow = $index"
           name="button"
           >EDIT</button>
+
+  <form ng-click="ctrl.sendEmail()">
+    <input type="text" ng-model="ctrl.sendName" placeholder="Name" />
+    <input type="text" ng-model="ctrl.sendMessage" placeholder="Message" />
+    <input type="text" ng-model="ctrl.sendMail" palceholder="Send" />
+    <input type="submit" value="Send">
+  </form>
 </li>
 </ul>

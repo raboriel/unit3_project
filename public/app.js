@@ -133,6 +133,28 @@ app.controller('appController', ['$http', function($http){
       );
   }
 
+  //email function
+  this.sendEmail =  function(name, email, message){
+  fetch('/send', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: this.sendName,
+      email: this.sendMail,
+      message: this.sendMessage
+    })
+  })
+  .then((res) => res.json())
+  .then((res) => {
+    console.log('here is the response: ', res);
+  })
+  .catch((err) => {
+    console.error('here is the error: ', err);
+  })
+ }
 
   this.getItem();
 

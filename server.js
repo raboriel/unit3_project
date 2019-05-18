@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const db = mongoose.connection;
 const session = require('express-session');
 const marketplaceController = require('./controllers/controller.js');
+const nodemailer = require('nodemailer');
 
 //port
 const PORT =  process.env.PORT || 3000;
