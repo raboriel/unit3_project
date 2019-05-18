@@ -1,9 +1,10 @@
 const app = angular.module('MyApp', []);
 
 app.controller('appController', ['$http', function($http){
-   const controller = this;
+  const controller = this;
 
   // create user
+  this.indexOfUserFormToShow = null;
   this.createUser = function(){
     $http({
       method: 'POST',
@@ -14,42 +15,54 @@ app.controller('appController', ['$http', function($http){
       }
     }).then( response => {
       console.log(response);
+      this.indexOfUserFormToShow = null;
     }).catch( err => {
       console.log(err);
     })
   }
 
   //login user
+  this.indexOfLogFormToShow = null;
   this.logIn = function(){
     $http({
       method: 'POST',
       url: '/sessions',
       data: {
-        username: this.logUsername,
-        password: this.logPassword
+        username: this.username,
+        password: this.password
       }
     }).then( response => {
       console.log(response);
-      controller.username = null;
-      controller.password = null;
+      this.indexOfLogFormToShow = null;
       controller.goApp();
     }).catch( err => {
       console.log(err);
     })
   }
-  //log out user
-  // this.logOut = function(){
-  //   $http({
-  //     method: 'DELETE',
-  //     url: '/sessions'
-  //   }).then( response => {
-  //     console.log(response);
-  //     controller.loggedInUsername = null;
-  //   }).catch( err => {
-  //     console.log(err);
-  //   })
-  // }
-
+  // log out user
+  this.logOut = function(){
+    $http({
+      method: 'DELETE',
+      url: '/sessions'
+    }).then( response => {
+      console.log(response);
+      controller.loggedInUsername = null;
+    }).catch( err => {
+      console.log(err);
+    })
+  }
+  //go to user session
+  this.goApp = function(){
+    $http({
+      method: 'GET',
+      url:'/app'
+    }).then( response => {
+      console.log(response);
+      controller.loggedInUsername = response.data.username
+    }).catch( err => {
+      console.log(err);
+    })
+  }
   //create item
   this.createItem = function(){
     $http({

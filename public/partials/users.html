@@ -1,12 +1,29 @@
-<h2>Create User</h2>
-<form ng-submit="ctrl.createUser()">
-  <input type="text" ng-model="ctrl.username"/>
-  <input type="password" ng-model="ctrl.password"/>
-  <input type="submit" value="Create user"/>
+<div ng-hide="ctrl.loggedInUsername">
+  <form ng-if="$index === ctrl.indexOfUserFormToShow" ng-submit="ctrl.createUser()">
+    <input type="text" ng-model="ctrl.username"/>
+    <input type="password" ng-model="ctrl.password"/>
+    <input type="submit" value="Create user"/>
+  </form>
+  <button type="button"
+          ng-if="$index !== ctrl.indexOfUserFormToShow"
+          ng-click="ctrl.indexOfUserFormToShow = $index"
+          name="button"
+          >Sign Up</button>
+
+  <form ng-if="$index === ctrl.indexOfLogFormToShow" ng-submit="ctrl.logIn()">
+    <input type="text" ng-model="ctrl.username"/>
+    <input type="password" ng-model="ctrl.password"/>
+    <input type="submit" value="Log In"/>
+  </form>
+  <button type="button"
+          ng-if="$index !== ctrl.indexOfLogFormToShow"
+          ng-click="ctrl.indexOfLogFormToShow = $index"
+          name="button"
+          >Log In</button>
+</div>
+<div ng-if="ctrl.loggedInUsername">
+Welcome, {{ctrl.loggedInUsername}}
+<form ng-submit="ctrl.logOut()">
+  <input type="submit" value="Logout">
 </form>
-<h2>Log In</h2>
-<form ng-submit="ctrl.logIn()">
-  <input type="text" ng-model="ctrl.logUsername"/>
-  <input type="password" ng-model="ctrl.logPassword"/>
-  <input type="submit" value="Log In"/>
-</form>
+</div>
