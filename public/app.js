@@ -71,11 +71,11 @@ app.controller('appController', ['$http', function($http){
       method:'POST',
       url: '/items',
       data: {
-          name: this.name,
-          email: this.email,
-          phone: this.phone,
-          price: this.price,
-          zip: this.zip
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        price: this.price,
+        zip: this.zip
         }
     }).then(function(response){
         controller.getItem() //refresh the list
@@ -122,7 +122,7 @@ app.controller('appController', ['$http', function($http){
           email: this.updatedEmail,
           phone: this.updatedPhone,
           price: this.updatedPrice,
-          email: this.updatedEmail
+          zip: this.updatedZip
           }
       }).then(
           function(response){
