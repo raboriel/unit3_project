@@ -22,11 +22,10 @@ router.get('/', (req, res) => {
 // POST
 //=======
 router.post('/', (req, res) => {
-  req.body.idForUser = req.session.currentUser._id
-  Items.create(req.body, (err, createdItem) => {
-    res.json(createdItem)
-  });
-});
+  Items.create(req.body, (err, createdItems) => {
+    res.json(createdItems)
+  })
+})
 
 //=========
 // DELETE

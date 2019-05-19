@@ -1,0 +1,16 @@
+header{
+  text-align: center;
+}
+.headerImage{
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  
+}
+
+.nameandlogin{
+  background: black;
+  background-color: white;
+
+}
