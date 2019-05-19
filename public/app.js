@@ -135,27 +135,54 @@ app.controller('appController', ['$http', function($http){
       );
   }
 
+  this.indexOfEmailFormToShow = null;
+  //email function
+  this.sendEmail =  function(sendName, sendMail, sendMessage){
+  fetch('/send', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: this.sendName,
+      email: this.sendMail,
+      message: this.sendMessage
+    })
+  })
+  .then((res) => res.json())
+  .then((res) => {
+    this.indexOfEmailFormToShow = null;
+    console.log('here is the response: ', res);
+  })
+  .catch((err) => {
+    console.error('here is the error: ', err);
+  })
+ }
 
-  this.getItem();
+
 
 //function to search searchbar
-app.controller('MyController', ['$http', function($http){
-    this.searchForItem = function(){
-        $http({
-            method:'GET',
-            url: '/items/',
-            data: {
-                name: String,
-                zip: Number,
-                price: Number
-            }
-        }).then(function(response){
-            console.log(response);
-        }, function(){
-            console.log('error');
-        });
-    }
-}]);
+
+//You added an extra app.controller here so it was not connecting, the data section was set to String, Number etc, I swicthed it to this.name etc. -justin
+  this.searchForItem = function(){
+    $http({
+      method:'GET',
+      url: '/items/',
+      data: {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        price: this.price,
+        zip: this.zip
+      }
+      }).then(function(response){
+          console.log(response);
+      }, function(){
+          console.log('error');
+      });
+  }
+
 //function to toggle item when clicked
 this.toggleItemComplete = function(item){
     let newValue;
@@ -181,5 +208,7 @@ this.toggleItemComplete = function(item){
         console.log('error');
     });
 }
+
+  this.getItem();
 
 }]);
