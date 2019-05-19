@@ -138,4 +138,48 @@ app.controller('appController', ['$http', function($http){
 
   this.getItem();
 
+//function to search searchbar
+app.controller('MyController', ['$http', function($http){
+    this.searchForItem = function(){
+        $http({
+            method:'GET',
+            url: '/items/',
+            data: {
+                name: String,
+                zip: Number,
+                price: Number
+            }
+        }).then(function(response){
+            console.log(response);
+        }, function(){
+            console.log('error');
+        });
+    }
+}]);
+//function to toggle item when clicked
+this.toggleItemComplete = function(item){
+    let newValue;
+    if(item.complete === true){
+        newValue = false;
+    } else {
+        newValue = true;
+    }
+
+    $http({
+        method:'PUT',
+        url: '/items/' + item._id,
+        data: {
+          name: String,
+          email: String,
+          phone: Number,
+          zip: Number,
+          price: Number
+        }
+    }).then(function(response){
+        controller.getItems();
+    }, function(){
+        console.log('error');
+    });
+}
+
 }]);

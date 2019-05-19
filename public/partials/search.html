@@ -1,1 +1,9 @@
-<input type="text" placeholder="search">
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+<!--search bar-->
+  <label class="searchbar" for="Search for">search
+	  <input type='text' placeholder='Search for item' ng-model='searchBox' ng-submit="ctrl.searchForItem()">
+
+</label>
+<ul>
+	<li ng-repeat="Item in ctrl.item| filter: searchBox">{{item.name}} :<div> {{item.zip}}</div> :<div> {{item.price | currency}}</div></li>
+</ul>

@@ -5,20 +5,17 @@
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script src="/app.js" charset="utf-8"></script>
-    
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+
   </head>
 
-  <label class="searchbar" for="Search for">search
-	  <input type='text' placeholder='Search for item' ng-model='searchBox'>
-    <input type="submit" value="Go"/>
-</label>
-<ul>
-	<li ng-repeat="product in ctrl.products| filter: searchBox">{{ product.name}} :<span> {{product.price | currency}}</span></li>
-</ul>
+
+<!--- body ---->
   <body ng-controller="appController as ctrl">
-    <h1>Hi</h1>
     <!-- user path /partials/users.html -->
-    <div ng-include="'partials/users.html'"></div>
+    <div class="nameandlogin" ng-include="'partials/users.html'"></div>
+    <div class="headerImage"> <img src="https://images.zgallerie.com/is/image/ZGallerie/siteimage/-Apr19_hero_03.jpg" alt="furniture"> </div>
+    <div class="nameandlogin"><h2>Second Life</h2></div>
     <!-- search path /partials/search.html -->
     <div ng-include="'partials/search.html'"></div>
     <!-- item path /partials/items.html -->
