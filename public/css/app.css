@@ -1,0 +1,42 @@
+
+/* changed this to a flex box and centered it */
+.headerImage {
+  display: inline-block;
+  padding: 0;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  width:100%;
+  object-fit: cover;
+
+}
+
+.login {
+  display: flex;
+  justify-content: right;
+  color: black;
+  height: 15px;
+  opacity: .7;
+  padding-bottom: 6px;
+  padding-left: 900px;
+}
+
+.name{
+  display: flex;
+  justify-content: left;
+  color: black;
+  opacity: .7;
+  height: 20px;
+  margin: 0;
+  padding: 0 0 3px 6px;
+  font-size: 15px;
+  text-align: center;
+
+
+}
+
+
+.searchbar {
+  
+
+}

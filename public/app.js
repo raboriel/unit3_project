@@ -134,6 +134,7 @@ app.controller('appController', ['$http', function($http){
           }
       );
   }
+
   this.indexOfEmailFormToShow = null;
   //email function
   this.sendEmail =  function(sendName, sendMail, sendMessage){
@@ -158,6 +159,55 @@ app.controller('appController', ['$http', function($http){
     console.error('here is the error: ', err);
   })
  }
+
+
+
+//function to search searchbar
+
+//You added an extra app.controller here so it was not connecting, the data section was set to String, Number etc, I swicthed it to this.name etc. -justin
+  this.searchForItem = function(){
+    $http({
+      method:'GET',
+      url: '/items/',
+      data: {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        price: this.price,
+        zip: this.zip
+      }
+      }).then(function(response){
+          console.log(response);
+      }, function(){
+          console.log('error');
+      });
+  }
+
+//function to toggle item when clicked
+this.toggleItemComplete = function(item){
+    let newValue;
+    if(item.complete === true){
+        newValue = false;
+    } else {
+        newValue = true;
+    }
+
+    $http({
+        method:'PUT',
+        url: '/items/' + item._id,
+        data: {
+          name: String,
+          email: String,
+          phone: Number,
+          zip: Number,
+          price: Number
+        }
+    }).then(function(response){
+        controller.getItems();
+    }, function(){
+        console.log('error');
+    });
+}
 
   this.getItem();
 

@@ -1,4 +1,14 @@
-<h2>Add Item</h2>
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+<!--search bar -->
+<div class= "searchbar">search
+<label class="searchbar" for="Search by">
+	 <input type='text' placeholder='Search for item' ng-model='searchBox' ng-submit="ctrl.searchForItem()">
+  <!-- added a button for testing - justin
+   <input type="submit" value="Search">-->
+</label>
+</div>
+<!--Add item-->
+<h3>Add Item</h3>
 <form ng-submit="ctrl.createItem()">
   <input type="text" ng-model="ctrl.name" placeholder="Item Name">
   <input type="text" ng-model="ctrl.price" placeholder="Item Price">
@@ -7,9 +17,12 @@
   <input type="text" ng-model="ctrl.zip" placeholder="zip">
   <input type="submit" value="Add Item"/>
 </form>
-<h2>Show / Delete Items</h2>
+
+
+
+<h3>Show / Delete Items</h3>
 <ul>
-<li ng-repeat="item in ctrl.items"> {{ item.name }}
+<li ng-repeat="item in ctrl.items | filter: searchBox"> {{ item.name }}
   <button ng-click="ctrl.deleteItem(item)">X</button>
   <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editItem(item);">
     <input type="text" ng-model="ctrl.updatedName" placeholder="Item Name" />
@@ -37,4 +50,13 @@
           name="button"
           >Message</button>
 </li>
+</ul>
+
+<!-- clicking on items toggles complete/ incomplete-->
+<ul>
+    <li
+        ng-class=" (item.complete) ? 'complete' : 'incomplete' "
+        ng-repeat="item in ctrl.items">
+        <span ng-click="ctrl.toggleItemComplete(item);">{{ctrl.item}}</span>
+    </li>
 </ul>
