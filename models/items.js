@@ -10,7 +10,9 @@ const itemSchema = new mongoose.Schema({
   phone: Number,
   zip: Number,
   price: Number,
-  idForUser: String
+  idForUser: String,
+  image: String
+
 });
 
 const Item = mongoose.model('Items', itemSchema);
