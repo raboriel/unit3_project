@@ -2,7 +2,7 @@ const app = angular.module('MyApp', []);
 
 
 
-app.controller('appController', ['$http', function($http, Auth){
+app.controller('appController', ['$http', function($http){
   const controller = this;
   this.includePath = 'partials/items.html';
 

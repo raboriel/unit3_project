@@ -38,12 +38,12 @@ body {
 .itemContainer {
   width: 250px;
   height: 30%;
-  border: 1px solid WhiteSmoke;
+  border: 1px solid LightGray;
   border-radius: 10px;
   padding: 10px;
 }
 
-.itemContainer,img {
+.itemContainer, img {
   overflow: hidden;
   max-width: 100%;
   height: auto;
