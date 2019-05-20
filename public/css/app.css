@@ -1,20 +1,42 @@
-header{
-  text-align: center;
-}
+
 /* changed this to a flex box and centered it */
 .headerImage {
-  display: flex;
-  justify-content: center;
+  display: inline-block;
   padding: 0;
-  width: 100%;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  width:100%;
+  object-fit: cover;
 
 }
 
-/* the backgrund was set to black then it was overridden to be set to white right after it. I changed the font color to white and background to black to test that things were working.  */
-.nameandlogin {
+.login {
   display: flex;
-  justify-content: center;
-  background: black;
-  color: white;
+  justify-content: right;
+  color: black;
+  height: 15px;
+  opacity: .7;
+  padding-bottom: 6px;
+  padding-left: 900px;
+}
+
+.name{
+  display: flex;
+  justify-content: left;
+  color: black;
+  opacity: .7;
+  height: 20px;
+  margin: 0;
+  padding: 0 0 3px 6px;
+  font-size: 15px;
+  text-align: center;
+
+
+}
+
+
+.searchbar {
+  
 
 }
