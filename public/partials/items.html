@@ -1,4 +1,7 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/app.css">
+
 <!--search bar -->
 <div class= "searchbar">
 <label class="searchbar" for="Search by">
@@ -43,6 +46,7 @@
 		    <input type="submit" value="Update">
 		    </form>
 		  <button type="button"
+							class="btn btn-danger"
 		          ng-if="$index !== ctrl.indexOfEditFormToShow"
 		          ng-click="ctrl.indexOfEditFormToShow = $index"
 		          name="button"
