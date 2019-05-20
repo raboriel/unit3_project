@@ -2,9 +2,11 @@ const app = angular.module('MyApp', []);
 
 app.controller('appController', ['$http', function($http){
   const controller = this;
+  this.includePath = 'partials/items.html';
 
   // create user
   this.indexOfUserFormToShow = null;
+
   this.createUser = function(){
     $http({
       method: 'POST',
@@ -69,11 +71,11 @@ app.controller('appController', ['$http', function($http){
       method:'POST',
       url: '/items',
       data: {
-          name: this.name,
-          email: this.email,
-          phone: this.phone,
-          price: this.price,
-          zip: this.zip
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        price: this.price,
+        zip: this.zip
         }
     }).then(function(response){
         controller.getItem() //refresh the list
@@ -120,7 +122,7 @@ app.controller('appController', ['$http', function($http){
           email: this.updatedEmail,
           phone: this.updatedPhone,
           price: this.updatedPrice,
-          email: this.updatedEmail
+          zip: this.updatedZip
           }
       }).then(
           function(response){
@@ -133,6 +135,79 @@ app.controller('appController', ['$http', function($http){
       );
   }
 
+  this.indexOfEmailFormToShow = null;
+  //email function
+  this.sendEmail =  function(sendName, sendMail, sendMessage){
+  fetch('/send', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: this.sendName,
+      email: this.sendMail,
+      message: this.sendMessage
+    })
+  })
+  .then((res) => res.json())
+  .then((res) => {
+    this.indexOfEmailFormToShow = null;
+    console.log('here is the response: ', res);
+  })
+  .catch((err) => {
+    console.error('here is the error: ', err);
+  })
+ }
+
+
+
+//function to search searchbar
+
+//You added an extra app.controller here so it was not connecting, the data section was set to String, Number etc, I swicthed it to this.name etc. -justin
+  this.searchForItem = function(){
+    $http({
+      method:'GET',
+      url: '/items/',
+      data: {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        price: this.price,
+        zip: this.zip
+      }
+      }).then(function(response){
+          console.log(response);
+      }, function(){
+          console.log('error');
+      });
+  }
+
+//function to toggle item when clicked
+this.toggleItemComplete = function(item){
+    let newValue;
+    if(item.complete === true){
+        newValue = false;
+    } else {
+        newValue = true;
+    }
+
+    $http({
+        method:'PUT',
+        url: '/items/' + item._id,
+        data: {
+          name: String,
+          email: String,
+          phone: Number,
+          zip: Number,
+          price: Number
+        }
+    }).then(function(response){
+        controller.getItems();
+    }, function(){
+        console.log('error');
+    });
+}
 
   this.getItem();
 

@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const db = mongoose.connection;
 const session = require('express-session');
 const marketplaceController = require('./controllers/controller.js');
+const nodemailer = require('nodemailer');
 
 //port
 const PORT =  process.env.PORT || 3000;
@@ -47,6 +48,43 @@ app.get('/app', (req, res)=>{
         });
     }
 })
+
+//============
+// SEND EMAIL
+//============
+app.post('/send', function(req, res, next) {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'SEIRproject3@gmail.com',
+      pass: '!Muffins!'
+    }
+  })
+  const mailOptions = {
+    from: `${req.body.email}`,
+    to: 'SEIRproject3@gmail.com',
+    subject: `Testing`,
+    text: `${req.body.message}`,
+    replyTo: `${req.body.email}`
+  }
+  transporter.sendMail(mailOptions, function(err, res) {
+    if (err) {
+      console.error('Error: ', err);
+    } else {
+      console.log('Response: ', res)
+    }
+  })
+
+})
+
+
+
+
+
+
+
+
+
 // usercontroller for sign up
 const userController = require('./controllers/users.js')
 app.use('/users', userController);
