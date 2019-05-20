@@ -8,55 +8,61 @@
 </label>
 </div>
 <!--Add item-->
-<h3>Add Item</h3>
-<form ng-submit="ctrl.createItem()">
-  <input type="text" ng-model="ctrl.name" placeholder="Item Name">
-  <input type="text" ng-model="ctrl.price" placeholder="Item Price">
-  <input type="text" ng-model="ctrl.email" placeholder="email">
-  <input type="text" ng-model="ctrl.phone" placeholder="phone">
-  <input type="text" ng-model="ctrl.zip" placeholder="zip">
-  <input type="submit" value="Add Item"/>
-</form>
-
+<!-- only show for log in user (kyungsub) -->
+<div ng-if="ctrl.loggedInUsername">
+	<h3>Add Item</h3>
+	<form ng-submit="ctrl.createItem()">
+	  <input type="text" ng-model="ctrl.name" placeholder="Item Name">
+	  <input type="text" ng-model="ctrl.price" placeholder="Item Price">
+	  <input type="text" ng-model="ctrl.email" placeholder="email">
+	  <input type="text" ng-model="ctrl.phone" placeholder="phone">
+		<input type="text" ng-model="ctrl.image" placeholder="image">
+		<input type="text" ng-model="ctrl.zip" placeholder="zip">
+	  <input type="submit" value="Add Item"/>
+	</form>
+</div>
 
 
 <h3>Show / Delete Items</h3>
-<ul>
-<li ng-repeat="item in ctrl.items | filter: searchBox"> {{ item.name }}
-  <button ng-click="ctrl.deleteItem(item)">X</button>
-  <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editItem(item);">
-    <input type="text" ng-model="ctrl.updatedName" placeholder="Item Name" />
-    <input type="text" ng-model="ctrl.updatedPrice" placeholder="Item Price" />
-    <input type="text" ng-model="ctrl.updatedEmail" placeholder="Email" />
-    <input type="text" ng-model="ctrl.updatedPhone" placeholder="Phone" />
-    <input type="text" ng-model="ctrl.updatedZip" placeholder="Zip" />
-    <input type="submit" value="Update">
-    </form>
-  <button type="button"
-          ng-if="$index !== ctrl.indexOfEditFormToShow"
-          ng-click="ctrl.indexOfEditFormToShow = $index"
-          name="button"
-          >EDIT</button>
+<div ng-repeat="item in ctrl.items | filter: searchBox" class="itemContainer">
+	<h4>{{ item.name }}</h4>
+	<img src="{{ item.image }}" alt="">
+	<!-- show EDIT/DELETE button only for listing user -->
+		<div ng-if="ctrl.loggedInUserId === item.idForUser">
+		  <button ng-click="ctrl.deleteItem(item)">X</button>
+		  <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editItem(item);">
+		    <input type="text" ng-model="ctrl.updatedName" placeholder="Item Name" />
+		    <input type="text" ng-model="ctrl.updatedPrice" placeholder="Item Price" />
+		    <input type="text" ng-model="ctrl.updatedEmail" placeholder="Email" />
+		    <input type="text" ng-model="ctrl.updatedPhone" placeholder="Phone" />
+				<input type="text" ng-model="ctrl.updatedimage" placeholder="image" />
+		    <input type="text" ng-model="ctrl.updatedZip" placeholder="Zip" />
+		    <input type="submit" value="Update">
+		    </form>
+		  <button type="button"
+		          ng-if="$index !== ctrl.indexOfEditFormToShow"
+		          ng-click="ctrl.indexOfEditFormToShow = $index"
+		          name="button"
+		          >EDIT</button>
+		</div>
+	  <form ng-submit="ctrl.sendEmail()" ng-if="$index === ctrl.indexOfEmailFormToShow">
+	    <input type="text" ng-model="ctrl.sendName" placeholder="Your Name" />
+	    <input type="text" ng-model="ctrl.sendMessage" placeholder=" Your Message" />
+	    <input type="text" ng-model="ctrl.sendMail" placeholder="Your Email" />
+	    <input type="submit" value="Send">
+	  </form>
+	  <button type="button"
+	          ng-if="$index !== ctrl.indexOfEmailFormToShow"
+	          ng-click="ctrl.indexOfEmailFormToShow = $index"
+	          name="button"
+	          >Message</button>
 
-  <form ng-submit="ctrl.sendEmail()" ng-if="$index === ctrl.indexOfEmailFormToShow">
-    <input type="text" ng-model="ctrl.sendName" placeholder="Your Name" />
-    <input type="text" ng-model="ctrl.sendMessage" placeholder=" Your Message" />
-    <input type="text" ng-model="ctrl.sendMail" placeholder="Your Email" />
-    <input type="submit" value="Send">
-  </form>
-  <button type="button"
-          ng-if="$index !== ctrl.indexOfEmailFormToShow"
-          ng-click="ctrl.indexOfEmailFormToShow = $index"
-          name="button"
-          >Message</button>
-</li>
-</ul>
-
+</div>
 <!-- clicking on items toggles complete/ incomplete-->
-<ul>
+<!-- <ul>
     <li
         ng-class=" (item.complete) ? 'complete' : 'incomplete' "
         ng-repeat="item in ctrl.items">
         <span ng-click="ctrl.toggleItemComplete(item);">{{ctrl.item}}</span>
     </li>
-</ul>
+</ul> -->

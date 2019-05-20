@@ -6,6 +6,8 @@ app.controller('appController', ['$http', function($http){
   const controller = this;
   this.includePath = 'partials/items.html';
 
+
+
   // create user
   this.indexOfUserFormToShow = null;
   this.popUpSignBox = null;
@@ -50,8 +52,8 @@ app.controller('appController', ['$http', function($http){
       method: 'DELETE',
       url: '/sessions'
     }).then( response => {
-      console.log(response);
-      controller.loggedInUsername = null;
+      this.getItem();
+      this.loggedInUsername = null;
     }).catch( err => {
       console.log(err);
     })
@@ -64,6 +66,7 @@ app.controller('appController', ['$http', function($http){
     }).then( response => {
       console.log(response);
       controller.loggedInUsername = response.data.username
+      controller.loggedInUserId = response.data._id
     }).catch( err => {
       console.log(err);
     })
@@ -77,8 +80,10 @@ app.controller('appController', ['$http', function($http){
         name: this.name,
         email: this.email,
         phone: this.phone,
+        image: this.image,
         price: this.price,
         zip: this.zip
+
         }
     }).then(function(response){
         controller.getItem() //refresh the list
@@ -124,8 +129,10 @@ app.controller('appController', ['$http', function($http){
           name: this.updatedName,
           email: this.updatedEmail,
           phone: this.updatedPhone,
+          image: this.image,
           price: this.updatedPrice,
           zip: this.updatedZip
+
           }
       }).then(
           function(response){
@@ -162,8 +169,6 @@ app.controller('appController', ['$http', function($http){
     console.error('here is the error: ', err);
   })
  }
-
-
 
 //function to search searchbar
 
