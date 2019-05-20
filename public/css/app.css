@@ -1,5 +1,13 @@
+:root {
+  --darkOlive: #6C5337;
+  --whiteSmoke: #EAECE5;
+  --gray: #998D81;
+
+}
+
 body {
   text-align: center;
+  background: var(--whiteSmoke);
 }
 
 /* changed this to a flex box and centered it */
@@ -35,13 +43,19 @@ a:hover {
 }
 
 .name{
+  /* box-model */
   display: flex;
-  justify-content: left;
+  height: 3em;
+
+  /* positioning */
+  justify-content: center;
+  align-items: center;
+
+  /* visual */
   color: black;
   opacity: .9;
-  height: 20px;
-  margin: 0;
-  padding: 0 20px 10px 110px;
+
+  /* typography */
   font-size: 18px;
   text-align: center;
 }

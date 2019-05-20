@@ -14,9 +14,13 @@
 <!--- body ---->
   <body ng-controller="appController as ctrl">
   <div class="container-fluid">
-    <div class="name"><h2>Second Life</h2></div>
+    <div class="name">
+      <span class="logo">Second Life</span>
+      <div class="login" ng-include="'partials/users.html'"></div>
+    </div>
+    <div>
     <!-- user path /partials/users.html -->
-    <div class="login" ng-include="'partials/users.html'"></div>
+    <!-- <div class="login" ng-include="'partials/users.html'"></div> -->
     <div class="headerImage"> <img src="https://images.zgallerie.com/is/image/ZGallerie/siteimage/-Apr19_hero_03.jpg" alt="furniture"> </div>
     <!-- search path /partials/search.html -->
     <div class="search" ng-include="'partials/search.html'"></div>
