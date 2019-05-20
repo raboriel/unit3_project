@@ -20,7 +20,18 @@ body {
   height: 15px;
   opacity: .9;
   padding-bottom: 6px;
-  padding-left: 900px;
+  padding-left: 800px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+
+}
+
+a:hover {
+  color: rgb(128, 127, 123);
+  cursor: pointer;
+
+
 }
 
 .name{
@@ -30,8 +41,8 @@ body {
   opacity: .9;
   height: 20px;
   margin: 0;
-  padding: 0 0 3px 6px;
-  font-size: 15px;
+  padding: 0 20px 10px 110px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -41,6 +52,10 @@ body {
   border: 1px solid LightGray;
   border-radius: 10px;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
 
 .itemContainer, img {
@@ -55,14 +70,88 @@ body {
   left: 0;
   right: 0;
   background: white;
-	height: 200px;
-	width: 350px;
+	height: 400px;
+	width: 400px;
   padding : 20px;
 	border-radius: 10px;
-	margin: 0 auto;
+	margin: 7em auto;
+  border-radius: 1.5em;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
+.un{
+   width: 76%;
+   color: rgb(38, 50, 56);
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+   background: rgba(136, 126, 126, 0.04);
+   padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+}
+.signIn, .signUp {
+      padding-top: 5px;
+      color: black;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;
+      font-size: 23px;
+  }
+  p{
+    padding-top: 5px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    opacity: .7;
+    margin-left: 10%;
+  }
+.pass{
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+.submitLogIn{
+  cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: #A9A9A9;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 10%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+
+}
 .xButton {
   border: 0;
   float: right;
@@ -70,4 +159,21 @@ body {
 
 .logoutButton {
   display: inline;
+}
+
+.searchbar{
+  float: right;
+  padding: 0 55px 0 0;
+  height: 50px;
+
+}
+.searchbar input[type=text] {
+  width: 90px;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+.searchbar input[type=text]:focus {
+  width: 100%;
 }
