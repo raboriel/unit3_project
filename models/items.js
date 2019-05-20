@@ -8,11 +8,10 @@ const itemSchema = new mongoose.Schema({
   name: String,
   email: String,
   phone: Number,
+  image: String,
   zip: Number,
   price: Number,
   idForUser: String,
-  image: String
-
 });
 
 const Item = mongoose.model('Items', itemSchema);

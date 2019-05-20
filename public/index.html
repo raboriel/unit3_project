@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Second Life</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="/app.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="/css/app.css">
   </head>
@@ -17,7 +18,9 @@
     <div class="headerImage"> <img src="https://images.zgallerie.com/is/image/ZGallerie/siteimage/-Apr19_hero_03.jpg" alt="furniture"> </div>
     <!-- search path /partials/search.html -->
     <div class="search" ng-include="'partials/search.html'"></div>
-    <!-- item path /partials/items.html -->
-    <div ng-include="ctrl.includePath"></div>
+    <div class="Container">
+      <!-- item path /partials/items.html -->
+      <div ng-include="ctrl.includePath"></div>
+    </div>
   </body>
 </html>
