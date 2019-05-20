@@ -1,12 +1,15 @@
 const app = angular.module('MyApp', []);
 
+
+
 app.controller('appController', ['$http', function($http){
   const controller = this;
   this.includePath = 'partials/items.html';
 
   // create user
   this.indexOfUserFormToShow = null;
-
+  this.popUpSignBox = null;
+  this.popUpLogBox = null;
   this.createUser = function(){
     $http({
       method: 'POST',
