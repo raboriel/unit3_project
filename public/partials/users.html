@@ -4,9 +4,10 @@
   <form ng-if="$index === ctrl.indexOfUserFormToShow" ng-submit="ctrl.createUser()">
     <div class="signUpContainer" ng-if="$index !== ctrl.popUpSignBox">
       <button class="xButton" ng-click="ctrl.popUpSignBox = $index" >X</button><br/>
-      <input type="text" ng-model="ctrl.username" placeholder="User name"/><br/>
-      <input type="password" ng-model="ctrl.password" placeholder="Password"/><br/>
-      <input type="submit" value="Create user"/><br/>
+      <p class="signUp" align="center">Sign Up</p>
+      <input class="un" type="text" ng-model="ctrl.username" placeholder="User name"/><br/>
+      <input class="pass" type="password" ng-model="ctrl.password" placeholder="Password"/><br/>
+      <input class="submitLogIn" type="submit" value="Create user"/><br/>
     </div>
   </form>
   <a href="#" ng-click="ctrl.indexOfUserFormToShow = $index">Sign Up</a> |
@@ -15,9 +16,12 @@
   <form ng-if="$index === ctrl.indexOfLogFormToShow" ng-submit="ctrl.logIn()">
     <div class="signUpContainer" ng-if="$index !== ctrl.popUpLogBox">
       <button class="xButton" ng-click="ctrl.popUpLogBox = $index" >X</button><br/>
-      <input type="text" ng-model="ctrl.username" placeholder="User name"/><br/>
-      <input type="password" ng-model="ctrl.password" placeholder="Password"/><br/>
-      <input type="submit" value="Log In"/>
+      <p class="signIn" align="center">Log in</p>
+      <input class= "un" type="text" ng-model="ctrl.username" placeholder="Username"/><br/>
+      <br>
+      <input class= "pass" type="password" ng-model="ctrl.password" placeholder="Password"/><br/>
+      <br>
+      <input class="submitLogIn" type="submit" value="Log In"/>
     </div>
   </form>
 </div>
