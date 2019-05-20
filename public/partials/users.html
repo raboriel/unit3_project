@@ -1,7 +1,7 @@
 <div ng-hide="ctrl.loggedInUsername">
   <form ng-if="$index === ctrl.indexOfUserFormToShow" ng-submit="ctrl.createUser()">
-    <input type="text" ng-model="ctrl.username"/>
-    <input type="password" ng-model="ctrl.password"/>
+    <input type="text" ng-model="ctrl.username" placeholder="User name"/>
+    <input type="password" ng-model="ctrl.password" placeholder="Password"/>
     <input type="submit" value="Create user"/>
   </form>
   <button type="button"
@@ -11,8 +11,8 @@
           >Sign Up</button>
 
   <form ng-if="$index === ctrl.indexOfLogFormToShow" ng-submit="ctrl.logIn()">
-    <input type="text" ng-model="ctrl.username"/>
-    <input type="password" ng-model="ctrl.password"/>
+    <input type="text" ng-model="ctrl.username" placeholder="User name"/>
+    <input type="password" ng-model="ctrl.password" placeholder="Password"/>
     <input type="submit" value="Log In"/>
   </form>
   <button type="button"

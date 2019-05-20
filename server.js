@@ -14,6 +14,7 @@ const PORT =  process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/project';
 
 // connect to mongo
+mongoose.set('useCreateIndex', true)
 mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
 db.on('open', () => {
   console.log('connected to mongo');
