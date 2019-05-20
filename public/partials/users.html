@@ -1,5 +1,6 @@
 
 <div ng-hide="ctrl.loggedInUsername">
+  <!-- create user -->
   <form ng-if="$index === ctrl.indexOfUserFormToShow" ng-submit="ctrl.createUser()">
     <div class="signUpContainer" ng-if="$index !== ctrl.popUpSignBox">
       <button class="xButton" ng-click="ctrl.popUpSignBox = $index" >X</button><br/>
@@ -10,7 +11,7 @@
   </form>
   <a href="#" ng-click="ctrl.indexOfUserFormToShow = $index">Sign Up</a> |
   <a href="#" ng-click="ctrl.indexOfLogFormToShow = $index" >Log In</a>
-
+  <!-- log in user -->
   <form ng-if="$index === ctrl.indexOfLogFormToShow" ng-submit="ctrl.logIn()">
     <div class="signUpContainer" ng-if="$index !== ctrl.popUpLogBox">
       <button class="xButton" ng-click="ctrl.popUpLogBox = $index" >X</button><br/>
@@ -19,8 +20,8 @@
       <input type="submit" value="Log In"/>
     </div>
   </form>
-
 </div>
+<!-- seesion for current user  -->
 <div ng-if="ctrl.loggedInUsername">
 Welcome, {{ctrl.loggedInUsername}}
 <form class="logoutButton" ng-submit="ctrl.logOut()">

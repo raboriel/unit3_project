@@ -78,7 +78,8 @@ app.controller('appController', ['$http', function($http){
         email: this.email,
         phone: this.phone,
         price: this.price,
-        zip: this.zip
+        zip: this.zip,
+        image: this.image
         }
     }).then(function(response){
         controller.getItem() //refresh the list
@@ -125,7 +126,9 @@ app.controller('appController', ['$http', function($http){
           email: this.updatedEmail,
           phone: this.updatedPhone,
           price: this.updatedPrice,
+          image: this.image,
           zip: this.updatedZip
+
           }
       }).then(
           function(response){
