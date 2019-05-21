@@ -163,7 +163,6 @@ app.controller('appController', ['$http', function($http){
             this.indexOfEmailFormToShow = null;
           },
           function(error){
-
           }
       );
   }
