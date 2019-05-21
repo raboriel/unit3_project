@@ -5,11 +5,13 @@
 }
 
 body {
+  /* typography */
   text-align: center;
+
+  /* visual */
   background: var(--whiteSmoke);
 }
 
-/* changed this to a flex box and centered it */
 .headerImage {
   display: inline-block;
   padding: 0;
@@ -19,25 +21,6 @@ body {
   width:100%;
   object-fit: cover;
 }
-
-/* .login {
-  display: inline-block;
-  justify-content: right;
-  color: black;
-  height: 15px;
-  opacity: .9;
-  padding-bottom: 6px;
-  padding-left: 800px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-
-} */
-
-/* a:hover {
-  color: rgb(128, 127, 123);
-  cursor: pointer;
-} */
 
 .name {
   /* box-model */
@@ -159,36 +142,50 @@ body {
 }
 
 .login-text {
-    color: black;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    font-size: 23px;
-    opacity: .7;
-  }
-
-.submitLogIn{
-  cursor: pointer;
-    border-radius: 5em;
-    color: #fff;
-    background: #A9A9A9;
-    border: 0;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-family: 'Ubuntu', sans-serif;
-    width: 76%;
-    text-align: center;
-    font-size: 13px;
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  /* typography */
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+  opacity: .7;
 }
+
+.submitLogIn {
+  /* box-model */
+  padding-bottom: 10px;
+  width: 76%;
+  padding-top: 10px;
+
+  /* visual */
+  cursor: pointer;
+  border-radius: 5em;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+
+  /* typography */
+  color: #fff;
+  background: #A9A9A9;
+  border: 0;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  font-size: 13px;
+}
+
 .xButton {
+  /* box-model */
   border: 0;
   margin-top: -5em;
-  border-radius: 20px;
-  align-self: flex-end;
   margin-right: .5em;
+
+  /* positioning */
+  align-self: flex-end;
+
+  /* visual */
+  border-radius: 20px;
+
 }
 
 .logoutButton {
+  /* box-model */
   display: inline;
 }
 

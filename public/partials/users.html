@@ -4,11 +4,11 @@
   <!-- create user -->
   <form ng-if="$index === ctrl.indexOfUserFormToShow" ng-submit="ctrl.createUser()">
     <div class="signUpContainer" ng-if="$index !== ctrl.popUpSignBox">
-      <button class="xButton" ng-click="ctrl.popUpSignBox = $index" >X</button><br/>
-      <p class="signUp" align="center">Sign Up</p>
-      <input class="un" type="text" ng-model="ctrl.username" placeholder="User name"/><br/>
-      <input class="pass" type="password" ng-model="ctrl.password" placeholder="Password"/><br/>
-      <input class="submitLogIn" type="submit" value="Create user"/><br/>
+      <button class="xButton" ng-click="ctrl.popUpSignBox = $index" >X</button>
+      <div class="signIn"><span class="login-text">Sign Up</span></div>
+      <input class="un" type="text" ng-model="ctrl.username" placeholder="User name"/>
+      <input class="pass" type="password" ng-model="ctrl.password" placeholder="Password"/>
+      <input class="submitLogIn" type="submit" value="Create user"/>
     </div>
   </form>
   <a href="#" class="btn btn-login" ng-click="ctrl.indexOfUserFormToShow = $index">Sign Up</a> |
