@@ -205,13 +205,24 @@ body {
   margin-top: 1em;
 
   /* positioning */
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-header {
+  /* box-model */
+  margin-right: auto;
+  padding-left: 5em;
+
+  /* typography */
+  color: var(--darkOlive);
 }
 
 .searchbox {
+  margin-right: 8em;
   /* visual */
   border: 3px solid var(--darkOlive);
-  border-radius: 3px;
+  border-radius: 5em;
 
   background: var(--whiteSmoke)
 }
