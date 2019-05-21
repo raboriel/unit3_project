@@ -15,8 +15,8 @@
   <form ng-if="$index === ctrl.indexOfLogFormToShow" ng-submit="ctrl.logIn()">
     <div class="signUpContainer" ng-if="$index !== ctrl.popUpLogBox">
       <button class="xButton" ng-click="ctrl.popUpLogBox = $index" >X</button><br/>
-      <input type="text" ng-model="ctrl.username" placeholder="User name"/><br/>
-      <input type="password" ng-model="ctrl.password" placeholder="Password"/><br/>
+      <input type="text" ng-model="ctrl.logUsername" placeholder="User name"/><br/>
+      <input type="password" ng-model="ctrl.logPassword" placeholder="Password"/><br/>
       <input type="submit" value="Log In"/>
     </div>
   </form>

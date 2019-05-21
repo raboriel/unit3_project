@@ -35,8 +35,8 @@ app.controller('appController', ['$http', function($http){
       method: 'POST',
       url: '/sessions',
       data: {
-        username: this.username,
-        password: this.password
+        username: this.logUsername,
+        password: this.logPassword
       }
     }).then( response => {
       console.log(response);
