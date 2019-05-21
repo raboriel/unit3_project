@@ -4,6 +4,7 @@
 
 <!--search bar -->
 <div class="searchbar">
+	<h3 class="sub-header">Available Items:</h3>
 <label class="searchbar" for="Search by">
 	 <input class="searchbox" type='text' placeholder='Search for item' ng-model='searchBox' ng-submit="ctrl.searchForItem()">
   <!--added a button for testing - justin-->
@@ -26,7 +27,6 @@
 </div>
 
 <br>
-<h3>Show / Delete Items</h3>
 <div ng-repeat="item in ctrl.items | filter: searchBox" class="itemContainer">
 	<img src="{{ item.image }}"
 			 ng-click="showInfo = !showInfo"
