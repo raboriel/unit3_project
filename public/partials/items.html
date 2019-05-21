@@ -4,6 +4,7 @@
 
 <!--search bar -->
 <div class="searchbar">
+	<h3 class="sub-header">Available Items:</h3>
 <label class="searchbar" for="Search by">
 	 <input class="searchbox" type='text' placeholder='Search for item' ng-model='searchBox' ng-submit="ctrl.searchForItem()">
   <!--added a button for testing - justin-->
@@ -13,8 +14,10 @@
 <!--Add item-->
 <!-- only show for log in user (kyungsub) -->
 <div ng-if="ctrl.loggedInUsername">
-	<h3>Add Item</h3>
-	<form ng-submit="ctrl.createItem()">
+	<button class="btn btn-login add-btn"
+					ng-click="showBoxes = !showBoxes">
+						Add Item</button>
+	<form ng-if="showBoxes" ng-submit="ctrl.createItem()">
 	  <input type="text" ng-model="ctrl.name" placeholder="Item Name" required>
 	  <input type="text" ng-model="ctrl.price" placeholder="Item Price" required>
 	  <input type="text" ng-model="ctrl.email" placeholder="email" required>
@@ -26,7 +29,6 @@
 </div>
 
 <br>
-<h3>Show / Delete Items</h3>
 <div ng-repeat="item in ctrl.items | filter: searchBox" class="itemContainer">
 	<img src="{{ item.image }}"
 			 ng-click="showInfo = !showInfo"
@@ -58,6 +60,7 @@
 	    <input type="text" ng-model="ctrl.sendName" placeholder="Your Name" />
 	    <input type="text" ng-model="ctrl.sendMessage" placeholder=" Your Message" />
 	    <input type="text" ng-model="ctrl.sendMail" placeholder="Your Email" />
+			<input type="text" ng-model="ctrl.sendTo" ng-init="ctrl.sendTo=item.email"/>
 	    <input type="submit" value="Send">
 	  </form>
 	  <button type="button"

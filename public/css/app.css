@@ -1,7 +1,7 @@
 :root {
   --darkOlive: #6C5337;
   --whiteSmoke: #EAECE5;
-  --gray: #A9A9A9;;
+  --gray: #A9A9A9;
 }
 
 body {
@@ -28,7 +28,7 @@ body {
   height: 3em;
 
   /* positioning */
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
   /* visual */
@@ -41,9 +41,18 @@ body {
 }
 
 .logo {
+  /* box-model */
+  margin-right: auto;
+  padding-left: 4em;
+
   /* typography */
   font-size: 2em;
   color: var(--darkOlive);
+}
+
+.main-header,
+.logout-area {
+  margin-right: 8em;
 }
 
 .btn-login {
@@ -94,7 +103,6 @@ body {
   margin: 7em auto;
   left: 0;
   right: 0;
-
 
   /* positioning */
   flex-direction: column;
@@ -198,13 +206,33 @@ body {
   margin-top: 1em;
 
   /* positioning */
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-btn {
+  /* box-model */
+  margin-bottom: 1em;
+}
+
+.greeting {
+  margin-right: 2em;
+}
+
+.sub-header {
+  /* box-model */
+  margin-right: auto;
+  padding-left: 5em;
+
+  /* typography */
+  color: var(--darkOlive);
 }
 
 .searchbox {
+  margin-right: 8em;
   /* visual */
   border: 3px solid var(--darkOlive);
-  border-radius: 3px;
+  border-radius: 5em;
 
   background: var(--whiteSmoke)
 }
@@ -220,6 +248,7 @@ body {
   width: 100%;
 }
 
+<<<<<<< HEAD
 h4{
   font-size: 15px;
   font-weight: bold;
@@ -240,4 +269,32 @@ h4{
 
 .footer-content a:hover {
   color: gray;
+=======
+@media only screen and (max-width: 700px) {
+  .name {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .logo {
+    padding-top: 1em;
+    padding-left: 0;
+    margin-right: 0;
+  }
+
+  .main-header,
+  .logout-area {
+    margin-right: 0;
+  }
+
+  .headerImage {
+    padding-top: 3em;
+  }
+
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+>>>>>>> 5c9948dc2604f80afa70a29a832dbd15790e5233
 }
