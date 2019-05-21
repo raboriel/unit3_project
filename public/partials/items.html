@@ -1,10 +1,13 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/app.css">
+
 <!--search bar -->
-<div class= "searchbar">search
+<div class="searchbar">
 <label class="searchbar" for="Search by">
-	 <input type='text' placeholder='Search for item' ng-model='searchBox' ng-submit="ctrl.searchForItem()">
-  <!-- added a button for testing - justin
-   <input type="submit" value="Search">-->
+	 <input class="searchbox" type='text' placeholder='Search for item' ng-model='searchBox' ng-submit="ctrl.searchForItem()">
+  <!--added a button for testing - justin-->
+   <!-- <input type="submit" value="Search"> -->
 </label>
 </div>
 <!--Add item-->
@@ -12,9 +15,9 @@
 <div ng-if="ctrl.loggedInUsername">
 	<h3>Add Item</h3>
 	<form ng-submit="ctrl.createItem()">
-	  <input type="text" ng-model="ctrl.name" placeholder="Item Name">
-	  <input type="text" ng-model="ctrl.price" placeholder="Item Price">
-	  <input type="text" ng-model="ctrl.email" placeholder="email">
+	  <input type="text" ng-model="ctrl.name" placeholder="Item Name" required>
+	  <input type="text" ng-model="ctrl.price" placeholder="Item Price" required>
+	  <input type="text" ng-model="ctrl.email" placeholder="email" required>
 	  <input type="text" ng-model="ctrl.phone" placeholder="phone">
 		<input type="text" ng-model="ctrl.image" placeholder="image">
 		<input type="text" ng-model="ctrl.zip" placeholder="zip">
@@ -22,11 +25,17 @@
 	</form>
 </div>
 
-
+<br>
 <h3>Show / Delete Items</h3>
 <div ng-repeat="item in ctrl.items | filter: searchBox" class="itemContainer">
+	<img src="{{ item.image }}"
+			 ng-click="showInfo = !showInfo"
+			 >
 	<h4>{{ item.name }}</h4>
-	<img src="{{ item.image }}" alt="">
+	<h4>{{ item.price | currency }}</h4>
+	<!-- <div ng-show="showInfo"><h1> {{ item.zip }}</h1></div> -->
+
+
 	<!-- show EDIT/DELETE button only for listing user -->
 		<div ng-if="ctrl.loggedInUserId === item.idForUser">
 		  <button ng-click="ctrl.deleteItem(item)">X</button>
