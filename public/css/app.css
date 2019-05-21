@@ -1,8 +1,17 @@
-body {
-  text-align: center;
+:root {
+  --darkOlive: #6C5337;
+  --whiteSmoke: #EAECE5;
+  --gray: #A9A9A9;;
 }
 
-/* changed this to a flex box and centered it */
+body {
+  /* typography */
+  text-align: center;
+
+  /* visual */
+  background: var(--whiteSmoke);
+}
+
 .headerImage {
   display: inline-block;
   padding: 0;
@@ -13,37 +22,64 @@ body {
   object-fit: cover;
 }
 
-.login {
-  display: inline-block;
-  justify-content: right;
-  color: black;
-  height: 15px;
-  opacity: .9;
-  padding-bottom: 6px;
-  padding-left: 900px;
-}
-
-.name{
+.name {
+  /* box-model */
   display: flex;
-  justify-content: left;
+  height: 3em;
+
+  /* positioning */
+  justify-content: space-around;
+  align-items: center;
+
+  /* visual */
   color: black;
   opacity: .9;
-  height: 20px;
-  margin: 0;
-  padding: 0 0 3px 6px;
-  font-size: 15px;
+
+  /* typography */
+  font-size: 18px;
   text-align: center;
 }
 
+.logo {
+  /* typography */
+  font-size: 2em;
+  color: var(--darkOlive);
+}
+
+.btn-login {
+  /* box-model */
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+  /* visual */
+  border: 3px solid var(--darkOlive);
+  background: var(--gray);
+  color: var(--whiteSmoke);
+  border-radius: 5em;
+}
+
+.btn-login:hover {
+  /* visual */
+  border: 3px solid var(--gray);
+  background: var(--darkOlive);
+  color: var(--whiteSmoke);
+}
+
 .itemContainer {
+  background: rgba(255, 255, 255, 0.3);
   width: 250px;
   height: 30%;
   border: 1px solid LightGray;
   border-radius: 10px;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
 
 .itemContainer, img {
+  display: inline-block;
   overflow: hidden;
   max-width: 100%;
   height: auto;
@@ -51,23 +87,135 @@ body {
 }
 
 .signUpContainer {
-  position: absolute;
+  /* box-model */
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: 7em auto;
   left: 0;
   right: 0;
+
+
+  /* positioning */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  /* visual */
   background: white;
-	height: 200px;
-	width: 350px;
-  padding : 20px;
 	border-radius: 10px;
-	margin: 0 auto;
+  border-radius: 1.5em;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.xButton {
+.un,
+.pass {
+  /* box-model */
+  width: 76%;
+  box-sizing: border-box;
+  margin-bottom: 3em;
+  padding: 10px 20px;
+
+  /* visual */
+  background: rgba(136, 126, 126, 0.04);
+  outline: none;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+
+  /* typography */
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.signIn,
+.signUp {
+  /* box-model */
+  margin-bottom: 1em;
+
+  /* typography */
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.login-text {
+  /* typography */
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+  opacity: .7;
+}
+
+.submitLogIn {
+  /* box-model */
+  padding-bottom: 10px;
+  width: 76%;
+  padding-top: 10px;
+
+  /* visual */
+  cursor: pointer;
+  border-radius: 5em;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+
+  /* typography */
+  color: #fff;
+  background: #A9A9A9;
   border: 0;
-  float: right;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  font-size: 13px;
+}
+
+.xButton {
+  /* box-model */
+  border: 0;
+  margin-top: -5em;
+  margin-right: .5em;
+
+  /* positioning */
+  align-self: flex-end;
+
+  /* visual */
+  border-radius: 20px;
+
 }
 
 .logoutButton {
+  /* box-model */
   display: inline;
+}
+
+.searchbar {
+  /* box-model */
+  display: flex;
+  margin-top: 1em;
+
+  /* positioning */
+  justify-content: flex-end;
+}
+
+.searchbox {
+  /* visual */
+  border: 3px solid var(--darkOlive);
+  border-radius: 3px;
+
+  background: var(--whiteSmoke)
+}
+
+.searchbar input[type=text] {
+  width: 8em;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+.searchbar input[type=text]:focus {
+  width: 100%;
 }
