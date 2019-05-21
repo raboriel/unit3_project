@@ -7,10 +7,10 @@ const mongoose = require('mongoose');
 const itemSchema = new mongoose.Schema({
   name: String,
   email: String,
-  phone: Number,
   image: String,
   zip: Number,
   price: Number,
+  description: String,
   idForUser: String,
 });
 

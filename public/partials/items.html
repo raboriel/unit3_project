@@ -20,6 +20,7 @@
 	  <input type="text" ng-model="ctrl.email" placeholder="email" required>
 		<input type="text" ng-model="ctrl.image" placeholder="image" required>
 		<input type="text" ng-model="ctrl.zip" placeholder="City, State" required>
+		<input type="text" ng-model="ctrl.description" placeholder="description">
 	  <input type="submit" value="Add Item"/>
 	</form>
 </div>
@@ -27,14 +28,16 @@
 <br>
 <h3>Show / Delete Items</h3>
 <div ng-repeat="item in ctrl.items | filter: searchBox" class="itemContainer">
-	<img src="{{ item.image }}"
-			 ng-click="showInfo = !showInfo"
-			 >
+<!-- click for show item  -->
+	<img src="{{ item.image }}" ng-click="ctrl.showItem(item._id)"/>
 	<h4>{{ item.name }}</h4>
 	<h4>{{ item.price | currency }}</h4>
-	<!-- <div ng-show="showInfo"><h1> {{ item.zip }}</h1></div> -->
-
-
+	<!-- show detail when clickek -->
+	<div ng-show="ctrl.targetIndexId === item._id" class="ItemShow">
+		{{ item.description }}
+		<h5>{{ item.zip }}</h5>
+		<button ng-click="ctrl.showItem('')">Close</button>
+	</div>
 	<!-- show EDIT/DELETE button only for listing user -->
 		<div ng-if="ctrl.loggedInUserId === item.idForUser">
 		  <button ng-click="ctrl.deleteItem(item)">X</button>
@@ -42,9 +45,9 @@
 		    <input type="text" ng-model="ctrl.updatedName" placeholder="Item Name" />
 		    <input type="text" ng-model="ctrl.updatedPrice" placeholder="Item Price" />
 		    <input type="text" ng-model="ctrl.updatedEmail" placeholder="Email" />
-		    <input type="text" ng-model="ctrl.updatedPhone" placeholder="Phone" />
-				<input type="text" ng-model="ctrl.updatedimage" placeholder="image" />
+		    <input type="text" ng-model="ctrl.updatedimage" placeholder="image" />
 		    <input type="text" ng-model="ctrl.updatedZip" placeholder="Postal Code" />
+				<input type="text" ng-model="ctrl.updatedDescription" placeholder="Description" />
 		    <input type="submit" value="Update">
 		    </form>
 		  <button type="button"
