@@ -11,8 +11,8 @@
       <input class="submitLogIn" type="submit" value="Create user"/>
     </div>
   </form>
-  <a href="#" class="btn btn-login" ng-click="ctrl.indexOfUserFormToShow = $index">Sign Up</a> |
-  <a href="#" class="btn btn-login" ng-click="ctrl.indexOfLogFormToShow = $index" >Log In</a>
+  <a href="#" class="btn btn-login btnz" ng-click="ctrl.indexOfUserFormToShow = $index">Sign Up</a> |
+  <a href="#" class="btn btn-login btnz" ng-click="ctrl.indexOfLogFormToShow = $index" >Log In</a>
   <!-- log in user -->
   <form ng-if="$index === ctrl.indexOfLogFormToShow" ng-submit="ctrl.logIn()">
     <div class="signUpContainer">

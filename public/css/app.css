@@ -1,7 +1,7 @@
 :root {
   --darkOlive: #6C5337;
   --whiteSmoke: #EAECE5;
-  --gray: #A9A9A9;;
+  --gray: #A9A9A9;
 }
 
 body {
@@ -28,7 +28,7 @@ body {
   height: 3em;
 
   /* positioning */
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
   /* visual */
@@ -41,9 +41,17 @@ body {
 }
 
 .logo {
+  /* box-model */
+  margin-right: auto;
+  padding-left: 4em;
+
   /* typography */
   font-size: 2em;
   color: var(--darkOlive);
+}
+
+.main-header {
+  margin-right: 8em;
 }
 
 .btn-login {
@@ -94,7 +102,6 @@ body {
   margin: 7em auto;
   left: 0;
   right: 0;
-
 
   /* positioning */
   flex-direction: column;
