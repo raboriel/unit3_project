@@ -50,7 +50,8 @@ body {
   color: var(--darkOlive);
 }
 
-.main-header {
+.main-header,
+.logout-area {
   margin-right: 8em;
 }
 
@@ -214,6 +215,10 @@ body {
   margin-bottom: 1em;
 }
 
+.greeting {
+  margin-right: 2em;
+}
+
 .sub-header {
   /* box-model */
   margin-right: auto;
@@ -255,7 +260,8 @@ body {
     margin-right: 0;
   }
 
-  .main-header {
+  .main-header,
+  .logout-area {
     margin-right: 0;
   }
 
