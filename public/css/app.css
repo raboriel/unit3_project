@@ -209,6 +209,11 @@ body {
   align-items: center;
 }
 
+.add-btn {
+  /* box-model */
+  margin-bottom: 1em;
+}
+
 .sub-header {
   /* box-model */
   margin-right: auto;
