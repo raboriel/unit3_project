@@ -8,7 +8,7 @@ const itemSchema = new mongoose.Schema({
   name: String,
   email: String,
   image: String,
-  zip: Number,
+  zip: String,
   price: Number,
   description: String,
   idForUser: String,
