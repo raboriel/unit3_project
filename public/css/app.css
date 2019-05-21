@@ -102,47 +102,60 @@ body {
 }
 
 .signUpContainer {
-  position: absolute;
+  /* box-model */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 400px;
+  width: 400px;
+  margin: 7em auto;
   left: 0;
   right: 0;
+
+  /* positioning */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  /* visual */
   background: white;
-	height: 400px;
-	width: 400px;
-  /* padding: 20px; */
 	border-radius: 10px;
-	margin: 7em auto;
   border-radius: 1.5em;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.un{
-   width: 76%;
-   color: rgb(38, 50, 56);
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: rgba(136, 126, 126, 0.04);
-   padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
-    }
+.un,
+.pass {
+  /* box-model */
+  width: 76%;
+  box-sizing: border-box;
+  margin-bottom: 3em;
+  padding: 10px 20px;
+
+  /* visual */
+  background: rgba(136, 126, 126, 0.04);
+  outline: none;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+
+  /* typography */
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
 }
-.signIn, .signUp {
-      color: black;
-      font-family: 'Ubuntu', sans-serif;
-      font-weight: bold;
-      font-size: 23px;
+
+.signIn,
+.signUp {
+  /* box-model */
+  margin-bottom: 1em;
+
+  /* typography */
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
 }
 
 .login-text {
@@ -152,26 +165,6 @@ body {
     font-size: 23px;
     opacity: .7;
   }
-.pass{
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
-
-}
 
 .submitLogIn{
   cursor: pointer;
@@ -179,21 +172,17 @@ body {
     color: #fff;
     background: #A9A9A9;
     border: 0;
-    /* padding-left: 40px;
-    padding-right: 40px; */
     padding-bottom: 10px;
     padding-top: 10px;
     font-family: 'Ubuntu', sans-serif;
     width: 76%;
-    margin-left: 46px;
     text-align: center;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-
 }
 .xButton {
   border: 0;
-  margin-top: -8em;
+  margin-top: -5em;
   border-radius: 20px;
   align-self: flex-end;
   margin-right: .5em;
