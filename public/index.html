@@ -3,23 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Second Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script src="/app.js" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
   </head>
 
 
 <!--- body ---->
   <body ng-controller="appController as ctrl">
-    <div class="name"><h2>Second Life</h2></div>
+  <div class="container-fluid">
+    <div class="name">
+      <span class="logo">Second Life</span>
+      <div class="login" ng-include="'partials/users.html'"></div>
+    </div>
+    <div>
     <!-- user path /partials/users.html -->
-    <div class="login" ng-include="'partials/users.html'"></div>
+    <!-- <div class="login" ng-include="'partials/users.html'"></div> -->
     <div class="headerImage"> <img src="https://images.zgallerie.com/is/image/ZGallerie/siteimage/-Apr19_hero_03.jpg" alt="furniture"> </div>
     <!-- search path /partials/search.html -->
     <div class="search" ng-include="'partials/search.html'"></div>
-    <div class="Container">
-      <!-- item path /partials/items.html -->
-      <div ng-include="ctrl.includePath"></div>
-    </div>
+    <div class="container-fluid" ng-include="ctrl.includePath"></div>
+  </div>
   </body>
 </html>

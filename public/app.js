@@ -10,8 +10,6 @@ app.controller('appController', ['$http', function($http){
 
   // create user
   this.indexOfUserFormToShow = null;
-  this.popUpSignBox = null;
-  this.popUpLogBox = null;
   this.createUser = function(){
     $http({
       method: 'POST',
@@ -35,13 +33,13 @@ app.controller('appController', ['$http', function($http){
       method: 'POST',
       url: '/sessions',
       data: {
-        username: this.username,
-        password: this.password
+        username: this.logUsername,
+        password: this.logPassword
       }
     }).then( response => {
       console.log(response);
       this.indexOfLogFormToShow = null;
-      controller.goApp();
+      this.goApp();
     }).catch( err => {
       console.log(err);
     })
@@ -52,8 +50,9 @@ app.controller('appController', ['$http', function($http){
       method: 'DELETE',
       url: '/sessions'
     }).then( response => {
-      this.getItem();
       this.loggedInUsername = null;
+      this.loggedInUserId = null;
+      this.getItem();
     }).catch( err => {
       console.log(err);
     })
@@ -94,6 +93,7 @@ app.controller('appController', ['$http', function($http){
   }
 
   //Function to grab items from the database and show them on the page
+  this.indexOfPhotoToShow = null;
   this.getItem = function(){
     $http({
       method:'GET',
@@ -204,14 +204,14 @@ this.toggleItemComplete = function(item){
         method:'PUT',
         url: '/items/' + item._id,
         data: {
-          name: String,
-          email: String,
-          phone: Number,
-          zip: Number,
-          price: Number
+          name: this.name,
+          email: this.string,
+          phone: this.phone,
+          zip: this.zip,
+          price: this.price
         }
     }).then(function(response){
-        controller.getItems();
+        controller.getItem();
     }, function(){
         console.log('error');
     });
