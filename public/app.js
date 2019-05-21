@@ -7,7 +7,6 @@ app.controller('appController', ['$http', function($http){
   this.includePath = 'partials/items.html';
 
 
-
   // create user
   this.indexOfUserFormToShow = null;
   this.createUser = function(){
@@ -78,11 +77,10 @@ app.controller('appController', ['$http', function($http){
       data: {
         name: this.name,
         email: this.email,
-        phone: this.phone,
         image: this.image,
         price: this.price,
-        zip: this.zip
-
+        zip: this.zip,
+        description: this.description
         }
     }).then(function(response){
         controller.getItem() //refresh the list
@@ -128,11 +126,10 @@ app.controller('appController', ['$http', function($http){
         data: {
           name: this.updatedName,
           email: this.updatedEmail,
-          phone: this.updatedPhone,
           image: this.image,
           price: this.updatedPrice,
-          zip: this.updatedZip
-
+          zip: this.updatedZip,
+          description: this.updatedDescription
           }
       }).then(
           function(response){
@@ -178,9 +175,9 @@ app.controller('appController', ['$http', function($http){
       data: {
         name: this.name,
         email: this.email,
-        phone: this.phone,
         price: this.price,
-        zip: this.zip
+        zip: this.zip,
+        description: this.description
       }
       }).then(function(response){
           console.log(response);
@@ -206,7 +203,8 @@ this.toggleItemComplete = function(item){
           email: this.string,
           phone: this.phone,
           zip: this.zip,
-          price: this.price
+          price: this.price,
+          description: this.description
         }
     }).then(function(response){
         controller.getItem();
@@ -215,6 +213,14 @@ this.toggleItemComplete = function(item){
     });
 }
 
-  this.getItem();
+this.getItem();
+
+//show item
+this.targetIndexId = '';
+
+this.showItem = (item) => {
+  //get item's id and put into targetIndexId
+  this.targetIndexId = item;
+};
 
 }]);

@@ -14,8 +14,10 @@
 <!--Add item-->
 <!-- only show for log in user (kyungsub) -->
 <div ng-if="ctrl.loggedInUsername">
-	<h3>Add Item</h3>
-	<form ng-submit="ctrl.createItem()">
+	<button class="btn btn-login add-btn"
+					ng-click="showBoxes = !showBoxes">
+						Add Item</button>
+	<form ng-if="showBoxes" ng-submit="ctrl.createItem()">
 	  <input type="text" ng-model="ctrl.name" placeholder="Item Name" required>
 	  <input type="text" ng-model="ctrl.price" placeholder="Item Price" required>
 	  <input type="text" ng-model="ctrl.email" placeholder="email" required>
