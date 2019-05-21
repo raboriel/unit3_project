@@ -12,22 +12,23 @@
 	   <!-- <input type="submit" value="Search"> -->
 	</label>
 </div>
-	<!--Add item-->
-	<!-- only show for log in user -->
-	<div ng-if="ctrl.loggedInUsername">
-		<h3>Add Item</h3>
-		<form ng-submit="ctrl.createItem()">
-		  <input type="text" ng-model="ctrl.name" placeholder="Item Name" required>
-		  <input type="text" ng-model="ctrl.price" placeholder="Item Price" required>
-		  <input type="text" ng-model="ctrl.email" placeholder="email" required>
-			<input type="text" ng-model="ctrl.image" placeholder="image" required>
-			<input type="text" ng-model="ctrl.zip" placeholder="City, State" required>
-			<input type="text" ng-model="ctrl.description" placeholder="description">
-		  <input type="submit" value="Add Item"/>
-		</form>
-	</div>
+<!--Add item-->
+<!-- only show for log in user leave-->
+<div ng-if="ctrl.loggedInUsername">
+	<button class="btn btn-login add-btn"
+					ng-click="showBoxes = !showBoxes">
+						Add Item</button>
+	<form ng-if="showBoxes" ng-submit="ctrl.createItem()">
+	  <input type="text" ng-model="ctrl.name" placeholder="Item Name" required>
+	  <input type="text" ng-model="ctrl.price" placeholder="Item Price" required>
+	  <input type="text" ng-model="ctrl.email" placeholder="email" required>
+		<input type="text" ng-model="ctrl.image" placeholder="image" required>
+		<input type="text" ng-model="ctrl.zip" placeholder="City, State" required>
+		<input type="text" ng-model="ctrl.description" placeholder="description">
+	  <input type="submit" value="Add Item"/>
+	</form>
+</div>
 
-	<br>
 <div class="mainContainer">
 	<div ng-repeat="item in ctrl.items | filter: searchBox" class="itemContainer">
 	<!-- click for show item  -->
