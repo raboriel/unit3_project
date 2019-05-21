@@ -145,30 +145,28 @@ app.controller('appController', ['$http', function($http){
       );
   }
 
+//send email
   this.indexOfEmailFormToShow = null;
-  //email function
-  this.sendEmail =  function(sendName, sendMail, sendMessage){
-  fetch('/send', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      name: this.sendName,
-      email: this.sendMail,
-      message: this.sendMessage
-    })
-  })
-  .then((res) => res.json())
-  .then((res) => {
-    this.indexOfEmailFormToShow = null;
-    console.log('here is the response: ', res);
-  })
-  .catch((err) => {
-    console.error('here is the error: ', err);
-  })
- }
+  this.sendEmail = function(sendName, sendMail, sendMessage, sendTo){
+    $http({
+      method:'POST',
+      url: '/send',
+        data: {
+          name: this.sendName,
+          email: this.sendMail,
+          message: this.sendMessage,
+          sendTo: this.sendTo
+          }
+      }).then(
+          function(response){
+            controller.getItem();
+            this.indexOfEmailFormToShow = null;
+          },
+          function(error){
+
+          }
+      );
+  }
 
 //function to search searchbar
 

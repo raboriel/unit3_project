@@ -62,7 +62,7 @@ app.post('/send', function(req, res, next) {
   })
   const mailOptions = {
     from: `${req.body.email}`,
-    to: 'SEIRproject3@gmail.com',
+    to: `${req.body.sendTo}`,
     subject: `Testing`,
     text: `${req.body.message}`,
     replyTo: `${req.body.email}`
