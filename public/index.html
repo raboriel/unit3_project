@@ -14,7 +14,6 @@
 
 <!--- body ---->
   <body ng-controller="appController as ctrl">
-  <div class="container-fluid">
     <div class="name">
       <span class="logo">Second Life</span>
       <div class="login" ng-include="'partials/users.html'"></div>
@@ -30,12 +29,14 @@
     <div class="container-fluid" ng-include="ctrl.includePath"></div>
   </div>
 
-  <footer class="footer-basic-centered">
-     <h4 class="footer-company-motto">
-       Their second life will help you lead your best life.</h4> <br>
-     <h4>Created by <a href="https://github.com/justindaiello">Jusitn Aiello</a>, <a href="https://github.com/raboriel">Kyungsub Kim</a>, <a href="https://github.com/lyndsssa">Lyndsey Ajster</a></h4>
-     <br>
-     <h4 class="footer-company-name">Second Life &copy; 2019</h4>
-   </footer>
+    <div class="footer-content">
+      <footer class="footer-basic-centered">
+       <h4 class="footer-company-motto">
+         Their second life will help you lead your best life.</h4> <br>
+       <h4>Created by <a href="https://github.com/justindaiello">Jusitn Aiello</a>, <a href="https://github.com/raboriel">Kyungsub Kim</a>, <a href="https://github.com/lyndsssa">Lyndsey Ajster</a></h4>
+       <br>
+       <h4 class="footer-company-name">Second Life &copy; 2019</h4>
+     </footer>
+   </div>
   </body>
 </html>

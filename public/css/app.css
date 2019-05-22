@@ -300,6 +300,31 @@ body {
 }
 
 
+h4{
+  font-size: 15px;
+  font-weight: bold;
+  color: LightGray;
+  margin: -.5em;
+}
+
+.footer-content {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.footer-content a {
+  text-decoration: none;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: lighter;
+  color: black;
+  color: darkGrey;
+}
+
+.footer-content a:hover {
+  color: gray;
+}
+
 .footer-basic-centered{
 	background-color: #292c2f;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -308,9 +333,8 @@ body {
 	text-align: center;
 	font: normal 18px sans-serif;
   opacity: .6;
-
-	padding: 45px;
-	margin-top: 80px;
+	padding: 1.5em;
+	margin-top: 3em;
 }
 
 .footer-basic-centered .footer-company-motto{
