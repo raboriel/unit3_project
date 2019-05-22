@@ -26,8 +26,6 @@ body {
   width: 100%;
 }
 
-
-
 .name {
   /* box-model */
   display: flex;

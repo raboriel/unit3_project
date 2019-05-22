@@ -34,7 +34,7 @@
 	<!-- click for show item  -->
 		<div class="showItem">
 			<img src="{{ item.image }}" ng-click="ctrl.showItem(item._id)" class="ctImage"/><br/>
-			<h4>{{ item.name }}</h4>
+			<h5>{{ item.name }}</h5>
 			<h5 class="price">{{ item.price | currency }}</h5>
 			<button type="button"
 							ng-if="$index !== ctrl.indexOfEmailFormToShow"
