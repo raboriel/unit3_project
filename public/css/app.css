@@ -299,6 +299,38 @@ body {
   width: 100%;
 }
 
+
+.footer-basic-centered{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	font: normal 18px sans-serif;
+  opacity: .6;
+
+	padding: 45px;
+	margin-top: 80px;
+}
+
+.footer-basic-centered .footer-company-motto{
+	color:  LightGray;
+	font-size: 20px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-company-name{
+	color:  LightGray;
+	font-size: 14px;
+	margin: 0;
+}
+
+
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+
+
 @media only screen and (max-width: 700px) {
   .name {
     flex-direction: column;
@@ -324,5 +356,17 @@ body {
   html {
     margin: 0;
     padding: 0;
+  }
+
+  .footer-basic-centered{
+    padding: 35px;
+  }
+
+  .footer-basic-centered .footer-company-motto{
+    font-size: 18px;
+  }
+
+  .footer-basic-centered .footer-company-name{
+    font-size: 12px;
   }
 }
