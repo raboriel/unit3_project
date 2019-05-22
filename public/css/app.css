@@ -146,7 +146,7 @@ body {
   display: flex;
   height: 400px;
   width: 400px;
-  /* margin: 7em auto; */
+  margin: 7em auto;
   left: 0;
   right: 0;
 
@@ -212,7 +212,7 @@ body {
   padding-bottom: 10px;
   width: 76%;
   padding-top: 10px;
-  margin-right: auto;
+  /* margin-right: auto; */
 
   /* visual */
   cursor: pointer;

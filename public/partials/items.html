@@ -30,7 +30,7 @@
 </div>
 
 <div class="mainContainer">
-	<div ng-repeat="item in ctrl.items | filter: searchBox" class="itemContainer">
+	<div ng-repeat="item in ctrl.items | orderBy:'-date' | filter: searchBox" class="itemContainer">
 	<!-- click for show item  -->
 		<div class="showItem">
 			<img src="{{ item.image }}" ng-click="ctrl.showItem(item._id)" class="ctImage"/><br/>
