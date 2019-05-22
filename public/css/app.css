@@ -18,14 +18,22 @@ body {
   image-rendering: auto;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
-  width:100%;
-  object-fit: cover;
+  width: 90%;
+  /* object-fit: cover; */
 }
+
+.main-img {
+  width: 100%;
+}
+
+
 
 .name {
   /* box-model */
   display: flex;
   height: 3em;
+  width: 90%;
+  margin: 0 auto;
 
   /* positioning */
   justify-content: center;
@@ -43,14 +51,13 @@ body {
 .logo {
   /* box-model */
   margin-right: auto;
-  padding-left: 4em;
+
 
   /* typography */
   font-size: 2em;
   color: var(--darkOlive);
 }
 
-.main-header,
 .logout-area {
   margin-right: 8em;
 }
@@ -139,7 +146,7 @@ body {
   display: flex;
   height: 400px;
   width: 400px;
-  margin: 7em auto;
+  /* margin: 7em auto; */
   left: 0;
   right: 0;
 
@@ -205,6 +212,7 @@ body {
   padding-bottom: 10px;
   width: 76%;
   padding-top: 10px;
+  margin-right: auto;
 
   /* visual */
   cursor: pointer;
@@ -243,9 +251,11 @@ body {
   /* box-model */
   display: flex;
   margin-top: 1em;
+  width: 93%;
+  margin: 0 auto;
 
   /* positioning */
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -261,14 +271,16 @@ body {
 .sub-header {
   /* box-model */
   margin-right: auto;
-  padding-left: 5em;
+  width: 100%;
 
   /* typography */
   color: var(--darkOlive);
+  text-align: left;
+
 }
 
 .searchbox {
-  margin-right: 8em;
+  /* margin-right: 8em; */
   /* visual */
   border: 3px solid var(--darkOlive);
   border-radius: 5em;

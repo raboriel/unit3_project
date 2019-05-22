@@ -12,6 +12,7 @@ const itemSchema = new mongoose.Schema({
   price: Number,
   description: String,
   idForUser: String,
+  date: { type: Date, default: Date.now }
 });
 
 const Item = mongoose.model('Items', itemSchema);
